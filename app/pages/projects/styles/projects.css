@@ -1,0 +1,15 @@
+.projects {
+  margin-left: 30px;
+}
+.projects__title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.projects__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/*# sourceMappingURL=projects.css.map */
