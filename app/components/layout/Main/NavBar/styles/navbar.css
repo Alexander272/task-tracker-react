@@ -1,0 +1,50 @@
+.navbar {
+  flex-grow: 1;
+  max-width: 300px;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  background-color: var(--bg-primary);
+  position: relative;
+  transition: max-width 0.3s ease-in-out;
+}
+.navbar-close {
+  max-width: 80px;
+}
+.navbar-close .navbar__icon {
+  margin-right: 0;
+}
+.navbar-close .navbar__title {
+  display: none;
+}
+.navbar-close .navbar__item {
+  padding: 14px;
+  justify-content: center;
+}
+.navbar-close .navbar__item--icon, .navbar-close .navbar__item--icon-stroke {
+  max-height: 26px;
+  margin-right: 0;
+}
+.navbar-close .navbar__item-text {
+  display: none;
+}
+.navbar__header {
+  margin-top: 10px;
+  margin-bottom: 35px;
+}
+.navbar__link {
+  display: flex;
+  height: 40px;
+  text-decoration: none;
+  color: var(--white);
+  fill: var(--white);
+  justify-content: center;
+}
+.navbar__icon {
+  margin-right: 5px;
+}
+.navbar__title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=navbar.css.map */

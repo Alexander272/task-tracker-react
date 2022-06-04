@@ -1,0 +1,30 @@
+.navbar__item {
+  display: block;
+  padding: 12px 25px;
+  text-decoration: none;
+  color: var(--white);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+.navbar__item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.navbar__item--active {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.navbar__item--icon {
+  max-height: 20px;
+  fill: var(--white);
+  margin-right: 7px;
+}
+.navbar__item--icon-stroke {
+  fill: none;
+  stroke: var(--white);
+  max-height: 20px;
+  margin-right: 7px;
+}
+
+/*# sourceMappingURL=item.css.map */

@@ -1,0 +1,27 @@
+.navbar__resize {
+	background-color: var(--white);
+	border-radius: 999px;
+	position: absolute;
+	height: 36px;
+	width: 36px;
+	border: 2px solid var(--bg-primary);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	bottom: 100px;
+	right: -20px;
+
+	&-close {
+		.navbar__resize-icon {
+			transform: rotate(-180deg);
+		}
+	}
+
+	&-icon {
+		height: 20px;
+		fill: var(--bg-primary);
+		pointer-events: none;
+		transition: all 0.3s ease-in-out;
+	}
+}

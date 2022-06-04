@@ -1,7 +1,7 @@
 import type { MetaFunction } from '@remix-run/node'
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react'
 
-import styles from './styles/app.css'
+import styles from './styles/app.global.css'
 
 export function links() {
 	return [{ rel: 'stylesheet', href: styles }]
@@ -20,7 +20,7 @@ export default function App() {
 				<Meta />
 				<Links />
 			</head>
-			<body>
+			<body className='app'>
 				<Outlet />
 				<ScrollRestoration />
 				<Scripts />

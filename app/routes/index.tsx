@@ -1,10 +1,16 @@
-import { Link } from '@remix-run/react'
+import type { LinksFunction } from '@remix-run/node'
+import { MainLayout } from '~/components/layout/Main/Main'
+import { Home } from '~/components/pages/home/Home'
+
+import { links as layoutLinks } from '~/components/layout/Main/Main'
+export const links: LinksFunction = () => {
+	return [...layoutLinks()]
+}
 
 export default function Index() {
 	return (
-		<div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
-			<h1>Welcome to Remix</h1>
-			<Link to={'test'}>Test</Link>
-		</div>
+		<MainLayout>
+			<Home />
+		</MainLayout>
 	)
 }
