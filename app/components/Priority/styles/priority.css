@@ -1,0 +1,19 @@
+.priority {
+  padding: 10px 16px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border-radius: 20px;
+  font-weight: bold;
+  width: fit-content;
+  background-color: var(--gray);
+  color: var(--white);
+}
+.priority--high {
+  background-color: var(--red);
+}
+.priority--medium {
+  background-color: var(--bg-primary);
+}
+.priority--low {
+  background-color: var(--turquoise);
+}

@@ -1,12 +1,25 @@
 import type { LinksFunction } from '@remix-run/node'
-import type { FC } from 'react'
+import type { FC, MouseEvent } from 'react'
+import { Link, useNavigate } from '@remix-run/react'
 import type { IProject } from '~/types/project'
 import { stampToDate } from '~/utils/date'
+import { links as statusLinks, Status } from '~/components/Status/Status'
+import { links as priorityLinks, Priority } from '~/components/Priority/Priority'
+import { links as progressLinks, Progress } from '~/components/Progress/Progress'
+import { links as pinLinks, Pin } from '~/components/Pin/Pin'
+import { links as moreLinks, More } from '~/components/More/More'
 
 import styles from './styles/item.css'
-import { links as statusLinks, Status } from '~/components/Status/Status'
+import { ProjectsRoute } from '~/constants/routes'
 export const links: LinksFunction = () => {
-	return [{ rel: 'stylesheet', href: styles }, ...statusLinks()]
+	return [
+		{ rel: 'stylesheet', href: styles },
+		...statusLinks(),
+		...priorityLinks(),
+		...progressLinks(),
+		...pinLinks(),
+		...moreLinks(),
+	]
 }
 
 type Props = {
@@ -14,9 +27,34 @@ type Props = {
 }
 
 export const Item: FC<Props> = ({ project }) => {
+	const navigate = useNavigate()
+
+	const onNavigate = (link: string) => () => {
+		navigate(link)
+	}
+
+	const onPin = (event: MouseEvent<HTMLDivElement>) => {
+		event.stopPropagation()
+	}
+
 	return (
-		<div className='projects__item'>
-			<h5 className='projects__item-title'>{project.title}</h5>
+		<div className='projects__item' onClick={onNavigate(`${ProjectsRoute}/${project.id}`)}>
+			<Link to={`${ProjectsRoute}/${project.id}`} className='projects__item-title'>
+				{project.title}
+			</Link>
+			<div className='projects__more'>
+				<Pin pin={project.pinned} onPin={onPin} />
+				<More>
+					<Link to={`${ProjectsRoute}/copy`} className='projects__more-item'>
+						Copy project
+					</Link>
+					<Link to={`${ProjectsRoute}/edit/${project.id}`} className='projects__more-item'>
+						Edit project
+					</Link>
+					<p className='projects__more-item'>Delete project</p>
+				</More>
+			</div>
+
 			<div className='projects__date'>
 				<svg
 					version='1.1'
@@ -37,11 +75,19 @@ export const Item: FC<Props> = ({ project }) => {
 					)}
 				</p>
 			</div>
+
 			<div className='projects__tags'>
 				<Status status={project.status} />
+				<Priority priority={project.priority} />
 			</div>
-			{/* priority */}
-			{/* progress */}
+
+			<div className='projects__progress'>
+				<Progress
+					title='Project progress'
+					progress={(project.doneTask / project.allTask) * 100}
+					status={project.status}
+				/>
+			</div>
 		</div>
 	)
 }

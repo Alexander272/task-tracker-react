@@ -17,6 +17,8 @@ export const Projects = () => {
 				{/* 
 					Блок для сортировки проектов (поиска по названию)
 					пример по ссылке: https://dribbble.com/shots/14654003-todo-vu-Project-Management
+
+					надо бы тут еще кнопочку для создания проекта сделать
 				*/}
 			</div>
 

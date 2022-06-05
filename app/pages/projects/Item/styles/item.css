@@ -3,10 +3,18 @@
   border-radius: 12px;
   background-color: var(--white);
   flex-basis: 30%;
+  position: relative;
 }
 .projects__item-title {
+  display: block;
+  text-decoration: none;
+  color: var(--black);
   font-size: 1.1rem;
   margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.projects__item-title:hover {
+  color: var(--bg-primary);
 }
 .projects__date {
   font-size: 0.9rem;
@@ -32,4 +40,25 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+}
+.projects__progress {
+  margin-bottom: 10px;
+}
+.projects__more {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+.projects__more-item {
+  text-decoration: none;
+  color: var(--black);
+  display: block;
+  padding: 6px 14px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50px;
+}
+.projects__more-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }

@@ -1,0 +1,47 @@
+.progress--completed .progress__progress {
+  background-color: var(--green);
+}
+.progress--completed .progress__status {
+  color: var(--green);
+}
+.progress--canceled .progress__progress {
+  background-color: var(--red);
+}
+.progress--canceled .progress__status {
+  color: var(--red);
+}
+.progress--process .progress__progress {
+  background-color: var(--bg-primary);
+}
+.progress--process .progress__status {
+  color: var(--bg-primary);
+}
+.progress--hold .progress__progress {
+  background-color: var(--turquoise);
+}
+.progress--hold .progress__status {
+  color: var(--turquoise);
+}
+.progress__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.progress__title {
+  font-size: 1.1rem;
+}
+.progress__status {
+  font-weight: 600;
+}
+.progress__line {
+  width: 100%;
+  height: 8px;
+  background-color: var(--light-gray);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.progress__progress {
+  height: 100%;
+  border-radius: 16px;
+}

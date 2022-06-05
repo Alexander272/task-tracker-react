@@ -1,0 +1,74 @@
+.pin {
+	cursor: pointer;
+	position: relative;
+	// padding: 5px;
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+	// border-radius: 999px;
+	// transition: all 0.3s ease-in-out;
+
+	// &:hover {
+	// 	background-color: var(--light-gray);
+	// }
+
+	&:hover {
+		.pin__icon {
+			fill: var(--gray);
+
+			&--pinned {
+				fill: var(--bg-primary);
+			}
+		}
+
+		.pin__toast {
+			animation-name: pinToast;
+			animation-duration: 0.5s;
+			animation-delay: 3s;
+			animation-direction: normal;
+			animation-iteration-count: 1;
+			animation-timing-function: ease;
+			animation-play-state: running;
+			animation-fill-mode: forwards;
+		}
+	}
+
+	&__icon {
+		height: 20px;
+		pointer-events: none;
+		fill: var(--light-gray);
+		transition: all 0.3s ease-in-out;
+
+		&--pinned {
+			fill: var(--bg-primary);
+		}
+	}
+
+	&__toast {
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		top: -50px;
+		left: -40px;
+		text-align: center;
+		background-color: var(--white);
+		padding: 6px 10px;
+		width: 80px;
+		border-radius: 50px;
+		box-shadow: 0 0 3px rgba($color: #000000, $alpha: 0.1);
+
+		// transition: all 0.3s ease-in-out;
+		// animation: pinToast 0.3s;
+	}
+}
+
+@keyframes pinToast {
+	0% {
+		opacity: 0;
+		visibility: hidden;
+	}
+	100% {
+		visibility: visible;
+		opacity: 1;
+	}
+}

@@ -3,7 +3,7 @@ export interface IProject {
 	title: string
 	started: number
 	deadline?: number
-	priority: 0 | 1 | 2
+	priority: Priority
 	status: Status
 	pinned: boolean
 	allTask: number
@@ -12,7 +12,4 @@ export interface IProject {
 }
 
 export type Status = 'In process' | 'On hold' | 'Canceled' | 'Completed' | 'Pending'
-
-// high priority
-// medium priority
-// low priority
+export type Priority = 0 | 1 | 2

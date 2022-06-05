@@ -124,10 +124,13 @@ img {
   --bg-app: #f3f6fd;
   --bg-primary: #5767f1;
   --white: #fff;
+  --black: #000;
   --gray: #a0a7b5;
+  --light-gray: #d7d9dd;
   --green: #00c197;
   --yellow: #fbe880;
   --red: #c05c75;
+  --turquoise: #00b0d9;
 }
 
 .app {
